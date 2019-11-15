@@ -1,7 +1,7 @@
 # 构建一个最基础的nginx镜像
 
 ### 1. 编写Dockerfile文件，源码构建nginx镜像
-```
+```shell
 # 基础镜像使用alpine，只有几M，不要使用centos
 FROM alpine:3.9
 
@@ -64,7 +64,7 @@ CMD ["nginx", "-g", "daemon off;"]
 ```
 
 ### 2. 编写build-base-ngx-image.sh文件，用于构建base-nginx:v1基础镜像，该镜像用于具体项目的基础镜像
-```
+```shell
 #!/bin/bash
 
 # 构建base-nginx:v1镜像
@@ -72,7 +72,7 @@ docker build -t base-nginx:v1 -f Dockerfile .
 ```
 ### 3. 构建镜像并查看镜像是否构建成功
 
-```
+```shell
 # 构建镜像
 ./build-base-ngx-image.sh
 
@@ -84,7 +84,7 @@ docker image ls
 
 ### 4. 运行基于nginx-base:v1镜像的容器
 
-```
+```shell
 # 命令参数讲解：
 # docker run: 运行容器
 # -d: 后台运行

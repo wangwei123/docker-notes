@@ -1,7 +1,7 @@
 ## 使用docker部署一个包含hello api的Go web应用
 
 ### 1. 首先编写Dockerfile文件内容，用于构建Go应用镜像：
-```
+```shell
 # 基础镜像
 FROM alpine:latest　　　　　　　　　　　
 
@@ -22,7 +22,7 @@ CMD ["/usr/local/apps/hello/main"]
 ```
 
 ### 2. 编写build-image.sh脚本，编译Go应用，并构建Go应用的镜像
-```
+```shell
 #!/bin/bash
 
 # 编译Go应用
@@ -33,7 +33,7 @@ docker build -t hello-go:v1 .
 ```
 
 ### 3. 编写startup.sh脚本，运行hello-go:v1镜像的容器
-```
+```shell
 #!/bin/bash
 
 # 运行hello-go:v1镜像的容器
